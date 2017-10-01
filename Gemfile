@@ -5,12 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#authetication
+gem 'devise'
+
 # Inclua nas versões quando rails >= 5.1
 gem 'jquery-rails'
 
 # Sempre inclua
-#gem 'materialize-sass'
-#gem 'material_icons'
+gem 'materialize-sass'
+gem 'material_icons'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
