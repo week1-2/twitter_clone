@@ -2,13 +2,12 @@
 ===================
 
 ![ruby](https://img.shields.io/badge/Ruby-2.3-red.svg)
-![rails](https://img.shields.io/badge/Rails-5.0.1-red.svg)
+![rails](https://img.shields.io/badge/Rails-5.1.4-red.svg)
 ![rails](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 
 
 # About
-
 
 
 # Require
