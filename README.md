@@ -1,10 +1,10 @@
 # [Twitter](https://name_website.herokuapp.com/)
 ===================
 
-![ruby](https://img.shields.io/badge/Ruby-2.3-red.svg)
+![ruby](https://img.shields.io/badge/Ruby-2.4.2-red.svg)
 ![rails](https://img.shields.io/badge/Rails-5.1.4-red.svg)
 ![rails](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
-
+![Codeship Status for FabianoVilela/twitter-clone-week1-team2](https://app.codeship.com/projects/c9114aa0-88ba-0135-05c2-524439faa213/status?branch=master)
 
 
 # About

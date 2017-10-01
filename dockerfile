@@ -1,16 +1,16 @@
 FROM ruby:2.4.2-slim
-# Instala as nossas dependencias
+# Installs our dependencies
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-# Seta nosso path
+# Set our path
 ENV INSTALL_PATH /app
-# Cria nosso diretório
+# Create our directory
 RUN mkdir $INSTALL_PATH
-# Seta o nosso path como o diretório principal
+# Set your path as the home directory
 WORKDIR $INSTALL_PATH
-# Copia o nosso Gemfile para dentro do container
+# Copy our Gemfile into the container
 ADD Gemfile $INSTALL_PATH/Gemfile
 ADD Gemfile.lock $INSTALL_PATH/Gemfile.lock
-# Instala as Gems
+# Install the Gems
 RUN bundle install
-# Copia nosso código para dentro do container
+# Copy our code into the container
 ADD . $INSTALL_PATH
