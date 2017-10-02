@@ -11,3 +11,5 @@
 /db/*.sqlite3-journal
 config/initializers/secret_token.rb
 /config/database.yml
+config/cloudinary.yml
+public/uploads/

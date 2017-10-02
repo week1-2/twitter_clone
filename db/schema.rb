@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171001210355) do
     t.string "user_name"
     t.text "bio"
     t.string "location"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
