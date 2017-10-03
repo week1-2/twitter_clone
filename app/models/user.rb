@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :name, :email, :user_name, presence: true       
 
   mount_uploader :avatar, AvatarUploader
+
+  has_many :tweets
 end
