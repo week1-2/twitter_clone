@@ -18,7 +18,7 @@
 
 ### 1. Do a fork at original repository
 ```
-https://github.com/week1-2/twitter_clone
+https://github.com/week1-2/twitter_clone.git
 ```
 
 ### 2. Clone your fork at a local repository
