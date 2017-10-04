@@ -68,3 +68,5 @@ gem 'material_icons'
 #Image Upload
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
+
+gem "acts_as_follower"
