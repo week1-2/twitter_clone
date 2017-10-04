@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tweet/index'
+  get 'tweet/new'
+  get 'tweet/destroy'
+
   root :to => "home#index"
 
   get 'main/:id', to: 'users#show', as: :main
