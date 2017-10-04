@@ -1,11 +1,9 @@
 # [Twitter](https://name_website.herokuapp.com/)
-===================
 
 ![ruby](https://img.shields.io/badge/Ruby-2.4.2-red.svg)
 ![rails](https://img.shields.io/badge/Rails-5.1.4-red.svg)
 ![rails](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
-![Codeship Status for FabianoVilela/twitter-clone-week1-team2](https://app.codeship.com/projects/c9114aa0-88ba-0135-05c2-524439faa213/status?branch=master)
-
+[ ![Codeship Status for week1-2/twitter_clone](https://app.codeship.com/projects/77375db0-890f-0135-1335-624b0d28980b/status?branch=master)](https://app.codeship.com/projects/248552)
 
 # About
 
@@ -20,7 +18,7 @@
 
 ### 1. Do a fork at original repository
 ```
-https://github.com/FabianoVilela/twitter-clone-week1-team2
+https://github.com/week1-2/twitter_clone
 ```
 
 ### 2. Clone your fork at a local repository
@@ -32,12 +30,12 @@ https://github.com/FabianoVilela/twitter-clone-week1-team2
 
 ### 4. Run all migrations
 ```
-   $ docker-compose exec website rails db:create db:migrate      
+   $ docker-compose run --rm website rails db:create db:migrate      
 ```
 
 ### 5. How to execute other commands
 ```
-$ docker-compose exec website commandName
+$ docker-compose run --rm website commandName
 ```
 
 ### 6. Install new gems
@@ -52,14 +50,14 @@ $ docker-compose up
 
 ### 8. Test App
 ```
-$ docker-compose exec website bundle exec rspec
+$ docker-compose run --rm website bundle exec rspec
 ```
 
 ## How to contribute to the project
 
 ### 1. Add the remote repository source at your local repositoy
 ```
-$ git remote add upstream git@github.com:FabianoVilela/twitter-clone-week1-team2.git
+$ git remote add upstream git@github.com:https://github.com/week1-2/twitter_clone.git
 ```
 
 ### 2. Sync your repository with the original repository
