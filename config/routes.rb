@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   root :to => "home#index"
 
   devise_scope :user do
-  resources :users
-  get 'main/:id', to: 'users#show', as: :main
-  get 'profile/:id', to: 'registrations#edit', as: :profile
-      
+    resources :users
+    get 'main/:id', to: 'users#show', as: :main #custom
+    get 'profile/:id', to: 'registrations#edit', as: :profile #custom
   end
 end
