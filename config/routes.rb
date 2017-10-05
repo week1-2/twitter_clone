@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'tweet/index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
   get 'tweet/new'
   get 'tweet/destroy'
 
   root :to => "home#index"
 
+  devise_scope :user do
+  resources :users
   get 'main/:id', to: 'users#show', as: :main
-  get 'profile/:id', to: 'users#edit', as: :profile
-
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'profile/:id', to: 'registrations#edit', as: :profile
+      
+  end
 end
