@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'lerolero_generator'
   gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do
