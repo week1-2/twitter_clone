@@ -1,8 +1,9 @@
 <div class="container singup">
   <div class="row">
-    <div class="col s8 offset-s2">
-
-    <p>Sign up</p>
+    <div class="col s12">
+    <div class="header_devise">
+      <p>Register</p>
+      </div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -54,9 +55,6 @@
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
-
-
-    <%= render "devise/shared/links" %>
 
     </div>
   </div>
