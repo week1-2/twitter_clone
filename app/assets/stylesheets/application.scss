@@ -8,7 +8,12 @@
 
 
 body {
-  background-color: #90caf9;
+    background: #90caf9;
+    background: -webkit-linear-gradient(#90caf9, #fff);
+    background: -o-linear-gradient(#90caf9, #fff);
+    background: -moz-linear-gradient(#90caf9, #fff);
+    background: linear-gradient(#90caf9, #fff); 
+    background-repeat: no-repeat;
 }
 
 nav ul a {
