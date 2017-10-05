@@ -7,6 +7,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:name, :user_name, :email, :bio, :location, :password, :password_confirmation, :current_password, :avatar, :avatar_cache)
+    params.require(:user).permit(:name, :user_name, :email, :bio, :location, :avatar, :avatar_cache)
   end
+
+  ## To update without password
+  protected
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
 end
