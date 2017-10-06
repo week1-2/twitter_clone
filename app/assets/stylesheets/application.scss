@@ -12,7 +12,7 @@ body {
     background: -webkit-linear-gradient(#90caf9, #fff);
     background: -o-linear-gradient(#90caf9, #fff);
     background: -moz-linear-gradient(#90caf9, #fff);
-    background: linear-gradient(#90caf9, #fff); 
+    background: linear-gradient(#90caf9, #fff);
     background-repeat: no-repeat;
 }
 
@@ -20,11 +20,44 @@ nav ul a {
   color: #1976D2;
 }
 
-.row {
-  padding-top: 30px;
-}
-
-hr {
+.header hr {
     max-width: 80px;
     border-color: #1976D2;
+}
+
+
+.count_tweet p{
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.left-bar {
+  height: 60vh;
+
+  .user-details li{
+    padding-top: 60px;
+    display: block;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.header-tweet {
+  background: image-url("header_tweet.jpg");
+  height: 60vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.tweet {
+  padding: 50px;
+
+}
+
+.tweet p{
+  
+
 }

@@ -10,8 +10,21 @@
 
   <body>
 
+    <% if user_signed_in? %>
+    <nav>
+      <div class="nav-wrapper white">
+        <span class="brand-logo center blue-text text-darken-2"><i class="fa fa-twitter fa-lg"></i></span>
+          <ul class="right hide-on-med-and-down">
+              <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "waves-effect blue btn") %></li>
+              <li><%= link_to('Editar', edit_user_registration_path, class: "waves-effect blue btn") %></li>
+          </ul>
+      </div>
+    </nav>
 
-<%= yield %>
+    <% end %>
+
+
+    <%= yield %>
 
   </body>
 </html>
