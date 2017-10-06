@@ -1,15 +1,35 @@
 <% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "waves-effect red darken-4 btn") %>
+  <%= link_to('Editar', edit_user_registration_path, class: "waves-effect waves-light btn") %>
 <% end %>
 
+<br>
+<br>
+
 <div>
+  <%= image_tag(@user.avatar_url(:thumbnail), :width => 80, :height => 80) unless @user.avatar.blank? %>
   <p>Tweets <%= @user.tweets.count %></p>
+  <p>Name: <%= @user.name %></p>
 <div>
+
+<div>
+  <%= form_with(model: [ @user, Tweet.new ], local: true) do |form| %>
+    <div class="field">
+      <%= form.label :text %>
+      <%= form.text_area :text, id: :tweet_text, maxlength: 140 %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
 <div>
   <% @user.tweets.each do |tweet| %>
-  <strong><%= @user.name %></strong>
-  <p>
-    <%= tweet.text %>
-  </p>
+    <%= image_tag(@user.avatar_url(:thumbnail), :width => 50, :height => 50) %>
+    <strong><%= @user.name %></strong>
+    <p>
+      <%= tweet.text %>
+    </p>
   <% end %>
 </div>
