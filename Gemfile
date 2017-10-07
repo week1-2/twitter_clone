@@ -70,4 +70,4 @@ gem 'material_icons'
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
 
-gem "acts_as_follower"
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
