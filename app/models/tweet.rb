@@ -5,5 +5,7 @@ class Tweet < ApplicationRecord
   validates :user_id, presence: true
 
   include PgSearch
-  pg_search_scope :search, :against => [:text]  
+  pg_search_scope :search, :against => [:text], :associated_against => {
+    :user => :name
+  }
 end

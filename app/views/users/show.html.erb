@@ -33,7 +33,7 @@
             <div class="row">
               <div class="col s2">
                 <%= image_tag(@user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
-                <p><%= @user.name %></p>
+                <p><%= link_to @user.name, main_path(@user) %></p>
               </div>
               <div class="col s10 offset-2">
                 <h5><%= tweet.text %></h5>

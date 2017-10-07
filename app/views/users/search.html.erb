@@ -1,4 +1,4 @@
-<%= render 'header', user: @user %>
+<%= render 'header', user: current_user %>
 
 <div class="row">
   <div class="col s9 offset-s2">
@@ -21,17 +21,19 @@
       </div>
     </div>
 
-    <% unless @users.empty? %>
+    <% unless @results.empty? %>
       <div class="container">
         <div class="row white tweet">
           <div class="col s12">
-            <% @users.each do |user| %>
+            <% @results.each do |result| %>
               <div class="row">
                 <div class="col s2">
-                  <%= image_tag(user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
+                  <%= image_tag(result.user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
+                  <p><%= link_to result.user.name, main_path(result.user) %></p>
                 </div>
-                <div class="col s10">
-                  <h5><%= link_to user.name, user %></h5>
+                <div class="col s10 offset-2">
+                  <h5><%= result.text %></h5>
+                  <p><%= result.created_at.strftime("%A, %b %d")%></p>
                 </div>
               </div>
               <hr>
