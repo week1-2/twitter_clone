@@ -1,0 +1,44 @@
+<%= render 'header', user: @user %>
+
+<div class="row">
+  <div class="col s9 offset-s2">
+    <div class="container">
+      <div class="row white count_tweet">
+        <div class="col s4"><p><%= current_user.tweets.count %></p> <p>Tweets</p></div>
+        <div class="col s4"><p><%= current_user.followers_count %></p> <p>Followers</p></div>
+        <div class="col s4"><p><%= current_user.follow_count %></p> <p>Following</p></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row white tweet">
+        <div class="col s12">
+          <%= form_tag(search_path, method: :get) do %>
+            <%= text_field_tag :query, params[:query] %>
+            <%= submit_tag 'Search', name: nil %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <% unless @users.empty? %>
+      <div class="container">
+        <div class="row white tweet">
+          <div class="col s12">
+            <% @users.each do |user| %>
+              <div class="row">
+                <div class="col s2">
+                  <%= image_tag(user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
+                </div>
+                <div class="col s10">
+                  <h5><%= link_to user.name, user %></h5>
+                </div>
+              </div>
+              <hr>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

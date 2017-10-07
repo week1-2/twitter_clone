@@ -8,8 +8,10 @@ Rails.application.routes.draw do
       resources :follows, :only => [:create, :destroy]
       resources :tweets
     end
-
-    get 'main/:id', to: 'users#show', as: :main #custom
-    get 'profile/:id', to: 'registrations#edit', as: :profile #custom
+    
+    #custom
+    get 'main/:id', to: 'users#show', as: :main
+    get 'profile/:id', to: 'registrations#edit', as: :profile
+    get 'search', to: 'users#search', as: :search
   end
 end

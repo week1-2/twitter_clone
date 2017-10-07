@@ -3,4 +3,7 @@ class Tweet < ApplicationRecord
 
   validates :text, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+
+  include PgSearch
+  pg_search_scope :search, :against => [:text]  
 end

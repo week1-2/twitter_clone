@@ -1,0 +1,23 @@
+<% if @user.nil? %>
+    <% @user = current_user %>
+<% end %>
+
+<div class="row">
+  <div class="col s3 blue-grey darken-2 left-bar">
+    <div class="container user-details">
+      <ul>
+        <li><%= link_to image_tag(@user.avatar_url(:thumbnail), :width => 100, :height => 100, :class => "circle"), main_path(@user) unless @user.avatar.blank? %></li>
+        <li><%= link_to @user.name, main_path(@user) %></li>
+        <li><%= @user.email %></li>
+        <% if current_user != @user %>
+          <% if !current_user.following?(@user) %>
+            <li><%= button_to 'Seguir', user_follows_path(@user), class: 'follow-button' %> </li>
+          <% else %>
+            <li><%= button_to 'Parar de Seguir', user_follow_path(@user), class: 'unfollow-button', method: :delete %> </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col s9 header-tweet"></div>
+</div>
