@@ -15,7 +15,7 @@
         <div class="col s12">
           <%= form_tag(search_path, method: :get) do %>
             <%= text_field_tag :query, params[:query] %>
-            <%= submit_tag 'Search', name: nil %>
+            <%= submit_tag 'Search', name: nil, :class=> "btn waves-effect waves-light blue" %>
           <% end %>
         </div>
       </div>
@@ -29,7 +29,7 @@
               <div class="row">
                 <div class="col s2">
                   <%= image_tag(result.user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
-                  <p><%= link_to result.user.name, main_path(result.user) %></p>
+                  <p><%= link_to result.user.name, main_path(result.user ) %></p>
                 </div>
                 <div class="col s10 offset-2">
                   <h5><%= result.text %></h5>
