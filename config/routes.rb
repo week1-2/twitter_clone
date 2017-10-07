@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get 'main/:id', to: 'users#show', as: :main
     get 'profile/:id', to: 'registrations#edit', as: :profile
     get 'search', to: 'users#search', as: :search
+    get 'main/:id/followers', to: 'users#followers', as: :followers
+    get 'main/:id/following', to: 'users#show', as: :followings
   end
 end
