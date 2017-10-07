@@ -1,9 +1,14 @@
 class TweetsController < ApplicationController
+
+  def index
+    @tweet = Tweet.all.order('created_at ASC')
+  end
+
   before_action :set_user, only: [:create, :destroy]
   def new
     @tweet = Tweet.new
   end
-  
+
   def create
     @tweet = Tweet.new(user_tweet_params)
     respond_to do |format|
@@ -19,6 +24,10 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+
+  redirect_to main_path(@user)
   end
 
   private
@@ -30,5 +39,5 @@ class TweetsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_tweet_params
     params.require(:tweet).permit(:text, :user_id)
-  end  
+  end
 end
