@@ -1,0 +1,31 @@
+<%= render 'header', user: @user %>
+
+<div class="row">
+  <div class="col s9 offset-s2">
+    <div class="container">
+      <div class="row white count_tweet">
+        <div class="col s4"><p><%= current_user.tweets.count %></p> <p>Tweets</p></div>
+        <div class="col s4"><p><%= current_user.followers_count %></p> <p>Followers</p></div>
+        <div class="col s4"><p><%= current_user.follow_count %></p> <p>Following</p></div>
+      </div>
+    </div>
+
+    <% unless @user.all_following.empty? %>
+      <div class="container">
+        <div class="row white tweet">
+          <div class="col s12">
+            <% @user.followings.each do |following| %>
+              <div class="row">
+                <div class="col s12">
+                  <%= image_tag(following.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
+                  <p><%= link_to following.name, main_path(following) %></p>
+                </div>
+              </div>
+              <hr>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

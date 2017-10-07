@@ -5,8 +5,8 @@
     <div class="container">
       <div class="row white count_tweet">
         <div class="col s4"><p><%= @user.tweets.count %></p> <p>Tweets</p></div>
-        <div class="col s4"><p><%= @user.followers_count %></p> <p>Followers</p></div>
-        <div class="col s4"><p><%= @user.follow_count %></p> <p>Following</p></div>
+        <div class="col s4"><p><%= @user.followers_count %></p> <p><%= link_to 'Followers', followers_path %></p></div>
+        <div class="col s4"><p><%= @user.follow_count %></p> <p><%= link_to 'Following', followings_path %></p></div>
       </div>
     </div>
     <div class="container">
