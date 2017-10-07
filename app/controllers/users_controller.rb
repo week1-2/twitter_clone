@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  def search
+    @results = Tweet.search(params[:query]) 
+  end
+
   def show
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -17,6 +22,11 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
 
   private

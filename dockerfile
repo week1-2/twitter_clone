@@ -1,6 +1,8 @@
 FROM ruby:2.4.2-slim
 # Installs our dependencies
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+# Install GIT
+RUN apt-get install -y git
 # Set our path
 ENV INSTALL_PATH /usr/src/app
 # Create our directory

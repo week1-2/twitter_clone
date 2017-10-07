@@ -1,46 +1,32 @@
-<div class="row">
-  <div class="col s3 blue-grey darken-2 left-bar">
-    <div class="container user-details">
-      <ul>
-        <li><%= image_tag(@user.avatar_url(:thumbnail), :width => 100, :height => 100, :class => "circle") unless @user.avatar.blank? %></li>
-        <li><%= @user.name %></li>
-        <li><%= @user.email %></li>
-      </ul>
-    </div>
-  </div>
-  <div class="col s9 header-tweet"></div>
-</div>
+<%= render 'header', user: @user %>
 
 <div class="row">
   <div class="col s9 offset-s2">
     <div class="container">
       <div class="row white count_tweet">
-        <div class="col s3"><p><%= @user.tweets.count %></p> <p>Tweets</p></div>
-        <div class="col s3"><p>23</p> <p></p></div>
-        <div class="col s3"><p>23</p> <p>Followers</p></div>
-        <div class="col s3"><p>23</p> <p>Following</p></div>
+        <div class="col s4"><p><%= @user.tweets.count %></p> <p>Tweets</p></div>
+        <div class="col s4"><p><%= @user.followers_count %></p> <p>Followers</p></div>
+        <div class="col s4"><p><%= @user.follow_count %></p> <p>Following</p></div>
       </div>
     </div>
-
     <div class="container">
       <div class="row white tweet">
         <div class="col s12">
-          <div class="input-field col s8">
+          <div class="input-field col s12">
             <%= form_with(model: [ @user, Tweet.new ], local: true) do |form| %>
             <div class="field">
               <%= form.label :message, :value => "O que está acontecendo?" %>
-              <%= form.text_area :text, id: :tweet_text, maxlength: 140, :class=> "materialize-textarea" %>
+              <%= form.text_area :text, id: :tweet_text, maxlength: 140, 'data-length': "140", :class=> "materialize-textarea" %>
             </div>
             <div class="actions">
-              <%= form.submit :class => "btn waves-effect waves-light blue" %>
+              <%= form.submit class: "btn waves-effect waves-light blue", value: "Tweet", name: "create" %>
             </div>
             <% end %>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container">
+<div class="container">
       <div class="row white tweet">
         <div class="col s12">
           <% @user.tweets.each do |tweet| %>
@@ -59,6 +45,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/tcocca/acts_as_follower.git
+  revision: c5ac7b9601c4af01eb4d9112330b27be4d694ecc
+  branch: master
+  specs:
+    acts_as_follower (0.2.1)
+      activerecord (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,7 +46,6 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts_as_follower (0.2.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
@@ -126,6 +133,10 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    pg_search (2.1.1)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     pry (0.11.1)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -240,7 +251,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_follower
+  acts_as_follower!
   byebug
   capybara
   carrierwave (~> 1.0)
@@ -256,6 +267,7 @@ DEPENDENCIES
   material_icons
   materialize-sass
   pg (~> 0.18)
+  pg_search
   pry-rails
   puma (~> 3.0)
   rails (~> 5.1.4)
