@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     resources :users do
+      resources :follows, :only => [:create]
       resources :tweets
     end
 
