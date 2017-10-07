@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -21,6 +22,11 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
 
   private

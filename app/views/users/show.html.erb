@@ -38,6 +38,11 @@
               <div class="col s10 offset-2">
                 <h5><%= tweet.text %></h5>
                 <p><%= tweet.created_at.strftime("%A, %b %d")%></p>
+
+
+                <p><%= link_to "Delete", [tweet.user, tweet],
+                              method: :delete,
+                              :data=> {confirm: "Are you sure?"} %></p>
               </div>
             </div>
             <hr>
