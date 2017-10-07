@@ -26,23 +26,18 @@
         </div>
       </div>
     </div>
-    <div class="container">
+<div class="container">
       <div class="row white tweet">
         <div class="col s12">
           <% @user.tweets.each do |tweet| %>
             <div class="row">
               <div class="col s2">
                 <%= image_tag(@user.avatar_url(:thumbnail), :width => 50, :height => 50, :class => "circle") %>
-                <p><%= link_to @user.name, main_path(@user) %></p>
+                <p><strong><%= @user.name %></strong></p>
               </div>
-              <div class="col s10 offset-2">
+              <div class="col s6 offset-2">
                 <h5><%= tweet.text %></h5>
                 <p><%= tweet.created_at.strftime("%A, %b %d")%></p>
-
-
-                <p><%= link_to "Delete", [tweet.user, tweet],
-                              method: :delete,
-                              :data=> {confirm: "Are you sure?"} %></p>
               </div>
             </div>
             <hr>
