@@ -7,9 +7,11 @@
         <li><%= @user.email %></li>
         <% if current_user != @user %>
           <% if !current_user.following?(@user) %>
-            <li><%= button_to 'Seguir', user_follows_path(@user) %> </li>
+            <li><%= button_to 'Seguir', user_follows_path(@user), class: 'follow-button' %> </li>
+          <% else %>
+            <li><%= button_to 'Parar de Seguir', user_follow_path(@user), class: 'unfollow-button', method: :delete %> </li>
           <% end %>
-        <% end %>  
+        <% end %>
       </ul>
     </div>
   </div>
