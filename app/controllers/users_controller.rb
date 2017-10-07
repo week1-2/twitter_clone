@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  def search
+    @users = User.search(params[:query])
+  end
+
   def show
   end
 

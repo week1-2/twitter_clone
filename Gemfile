@@ -71,3 +71,4 @@ gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'pg_search'
