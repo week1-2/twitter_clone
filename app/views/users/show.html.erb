@@ -36,7 +36,7 @@
             <%= form_with(model: [ @user, Tweet.new ], local: true) do |form| %>
             <div class="field">
               <%= form.label :message, :value => "O que está acontecendo?" %>
-              <%= form.text_area :text, id: :tweet_text, maxlength: 140, :class=> "materialize-textarea" %>
+              <%= form.text_area :text, id: :tweet_text, maxlength: 140, 'data-length': "140", :class=> "materialize-textarea" %>
             </div>
             <div class="actions">
               <%= form.submit :class => "btn waves-effect waves-light blue" %>
